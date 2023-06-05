@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using TMPro;
 
 public class stats : MonoBehaviour
 {   
@@ -10,14 +11,52 @@ public class stats : MonoBehaviour
     public Vector3 actual_spawnpoint_position;
     public bool check_pointed = false;
 
+    public TextMeshProUGUI Timer;
+    public static float timer;
+    Rigidbody2D rb;
+
     void Start()
     {
         
+        timer = PlayerPrefs.GetFloat("timer");
         actual_spawnpoint_position.x = PlayerPrefs.GetFloat("aspp_x");
         actual_spawnpoint_position.y = PlayerPrefs.GetFloat("aspp_y");
         actual_spawnpoint_position.z = PlayerPrefs.GetFloat("aspp_z");
 
         transform.position = actual_spawnpoint_position;
+
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        
+        if(Input.GetKeyDown(KeyCode.Delete))
+        {
+
+            PlayerPrefs.DeleteKey("aspp_x");
+            PlayerPrefs.DeleteKey("aspp_y");
+            PlayerPrefs.DeleteKey("aspp_z");
+            PlayerPrefs.DeleteKey("timer");
+
+            SceneManager.LoadScene(0);
+        }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+
+            restart_scene();
+            movement.canJump =  true;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+
+            actions.quit_game();
+        }
+
+        timer += 1 * Time.deltaTime;
+        Timer.text =timer.ToString("F1");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -33,9 +72,11 @@ public class stats : MonoBehaviour
             }
             else
             {
-
-                SceneManager.LoadScene(0);
+                transform.position = Vector3.zero;
             }
+
+            Vector3 velocity = new Vector3(0f, 0f, 0f);
+            rb.velocity = velocity;
         }
         
         if(other.tag == "point")
@@ -48,5 +89,11 @@ public class stats : MonoBehaviour
             PlayerPrefs.SetFloat("aspp_y", actual_spawnpoint_position.y);
             PlayerPrefs.SetFloat("aspp_z", actual_spawnpoint_position.z);
         }
+    }
+
+    public void restart_scene()
+    {
+
+        transform.position = actual_spawnpoint_position;
     }
 }

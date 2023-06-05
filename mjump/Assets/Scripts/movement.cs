@@ -5,7 +5,7 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     Rigidbody2D rb;
-    public bool canJump;
+    public static bool canJump;
     public GameObject Direction;
     public float jump_force;
 

@@ -7,8 +7,8 @@ public class check_point_anim : MonoBehaviour
 
     public bool activated = false;
 
-    public float startValue = 0f; // startowa wartosc
-    public float endValue = 1f; // wartosc konczaca
+    public float startValue = 1f; // startowa wartosc
+    public float endValue = 2f; // wartosc konczaca
     public float lerpTime = 2f; // ile trwac ma
 
     private float currentTime = 0f;
