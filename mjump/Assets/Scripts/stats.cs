@@ -74,6 +74,8 @@ public class stats : MonoBehaviour
             {
                 transform.position = Vector2.zero;
             }
+            
+            rb.velocity = Vector2.zero;
         }
         
         if(other.tag == "point")
@@ -92,5 +94,6 @@ public class stats : MonoBehaviour
     {
 
         transform.position = actual_spawnpoint_position;
+        rb.velocity = Vector2.zero;
     }
 }

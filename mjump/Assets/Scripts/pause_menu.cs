@@ -34,13 +34,12 @@ public class pause_menu : MonoBehaviour
         {
 
             p_menu_active = true;
-            stats.rb.velocity = Vector2.zero;
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && p_menu_active)
         {
 
             p_menu_active = false;
-            stats.rb.velocity = Vector2.zero;
+            stats.rb.velocity =Vector2.zero;
         }
     }
 
@@ -51,13 +50,12 @@ public class pause_menu : MonoBehaviour
         {
 
             p_menu_active = true;
-            stats.rb.velocity = Vector2.zero;
         }
         else if(p_menu_active)
         {
 
             p_menu_active = false;
-            stats.rb.velocity = Vector2.zero;
+            stats.rb.velocity =Vector2.zero;
         }
     }
 }

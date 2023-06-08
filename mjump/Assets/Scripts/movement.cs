@@ -49,6 +49,16 @@ public class movement : MonoBehaviour
         }
     }
 
+    void OnTriggerStay2D(Collider2D other)
+    {
+        
+        if(other.tag == "ground")
+        {
+
+            canJump = true;
+        }
+    }
+
     void OnTriggerStay(Collider other)
     {
         
