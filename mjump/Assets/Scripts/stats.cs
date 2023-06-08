@@ -13,7 +13,7 @@ public class stats : MonoBehaviour
 
     public TextMeshProUGUI Timer;
     public static float timer;
-    Rigidbody2D rb;
+    public static Rigidbody2D rb;
 
     void Start()
     {
@@ -72,11 +72,10 @@ public class stats : MonoBehaviour
             }
             else
             {
-                transform.position = Vector3.zero;
+                transform.position = Vector2.zero;
             }
 
-            Vector3 velocity = new Vector3(0f, 0f, 0f);
-            rb.velocity = velocity;
+            rb.velocity = Vector2.zero;
         }
         
         if(other.tag == "point")
@@ -95,5 +94,6 @@ public class stats : MonoBehaviour
     {
 
         transform.position = actual_spawnpoint_position;
+        rb.velocity = Vector2.zero;
     }
 }

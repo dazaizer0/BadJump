@@ -19,13 +19,13 @@ public class movement : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetMouseButtonDown(0) && canJump == true)
+        if (Input.GetMouseButtonDown(0) && canJump == true && !pause_menu.p_menu_active)
         {
 
             Direction.SetActive(true);
         }
 
-        if (Input.GetMouseButtonUp(0) && canJump == true)
+        if (Input.GetMouseButtonUp(0) && canJump == true && !pause_menu.p_menu_active)
         {
             
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
