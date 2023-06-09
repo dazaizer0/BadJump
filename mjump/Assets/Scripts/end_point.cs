@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class end : MonoBehaviour
+public class end_point : MonoBehaviour
 {
 
     public TextMeshProUGUI end_text;

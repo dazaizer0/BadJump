@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
-public class stats : MonoBehaviour
+public class player_stats : MonoBehaviour
 {   
 
     [Header("aspp_manager")]
@@ -46,13 +46,13 @@ public class stats : MonoBehaviour
         {
 
             restart_scene();
-            movement.canJump =  true;
+            player_movement.canJump =  true;
         }
 
         if(Input.GetKeyDown(KeyCode.Q))
         {
 
-            actions.quit_game();
+            ingame_actions.quit_game();
         }
 
         timer += 1 * Time.deltaTime;

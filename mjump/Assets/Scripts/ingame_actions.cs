@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class actions : MonoBehaviour
+public class ingame_actions : MonoBehaviour
 {
     
     public static void quit_game()
@@ -13,6 +13,6 @@ public class actions : MonoBehaviour
         Application.Quit();
         Debug.Log("Quit");
 
-        PlayerPrefs.SetFloat("timer", stats.timer);
+        PlayerPrefs.SetFloat("timer", player_stats.timer);
     }
 }

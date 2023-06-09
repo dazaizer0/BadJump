@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class direction : MonoBehaviour
+public class player_direction : MonoBehaviour
 {
 
     private LineRenderer lineRenderer;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class check_point_anim : MonoBehaviour
+public class check_point : MonoBehaviour
 {
 
     public bool activated = false;

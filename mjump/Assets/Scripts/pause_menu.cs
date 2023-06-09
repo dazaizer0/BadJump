@@ -39,7 +39,7 @@ public class pause_menu : MonoBehaviour
         {
 
             p_menu_active = false;
-            stats.rb.velocity =Vector2.zero;
+            player_stats.rb.velocity =Vector2.zero;
         }
     }
 
@@ -55,7 +55,7 @@ public class pause_menu : MonoBehaviour
         {
 
             p_menu_active = false;
-            stats.rb.velocity =Vector2.zero;
+            player_stats.rb.velocity =Vector2.zero;
         }
     }
 }
