@@ -28,14 +28,24 @@ public class player_movement : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && canJump == true && !pause_menu.p_menu_active)
         {
             
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 playerPosition = transform.position;
+            if(Vector2.Distance(transform.position, Direction.transform.position) < 1f || Vector2.Distance(transform.position, Direction.transform.position) > 11.1f)
+            {
 
-            Vector2 direction = (mousePosition - playerPosition).normalized;
-            rb.AddForce(direction * jump_force, ForceMode2D.Impulse);
+                Debug.Log("no direction");
+                Direction.SetActive(false);
+            }
+            else
+            {
 
-            Direction.SetActive(false);
-            canJump = false;
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 playerPosition = transform.position;
+
+                Vector2 direction = (mousePosition - playerPosition).normalized;
+                rb.AddForce(direction * jump_force, ForceMode2D.Impulse);
+
+                Direction.SetActive(false);
+                canJump = false;
+            }
         }
     }
 
