@@ -8,6 +8,7 @@ public class player_movement : MonoBehaviour
     public static bool canJump;
     public GameObject Direction;
     public float jump_force;
+    public Transform donotclick;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class player_movement : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && canJump == true && !pause_menu.p_menu_active)
         {
             
-            if(Vector2.Distance(transform.position, Direction.transform.position) < 1f || Vector2.Distance(transform.position, Direction.transform.position) > 11.1f)
+            if(Vector2.Distance(transform.position, Direction.transform.position) < 0.9f || Vector2.Distance(transform.position, Direction.transform.position) > 12.6f /*|| Direction.transform.position == donotclick.transform.position*/)
             {
 
                 Debug.Log("no direction");

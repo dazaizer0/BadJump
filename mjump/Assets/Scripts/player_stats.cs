@@ -34,19 +34,14 @@ public class player_stats : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Delete))
         {
 
-            PlayerPrefs.DeleteKey("aspp_x");
-            PlayerPrefs.DeleteKey("aspp_y");
-            PlayerPrefs.DeleteKey("aspp_z");
-            PlayerPrefs.DeleteKey("timer");
-
-            SceneManager.LoadScene(0);
+            delete_data();
         }
 
         if(Input.GetKeyDown(KeyCode.R))
         {
 
             restart_scene();
-            player_movement.canJump =  true;
+            player_movement.canJump = true;
         }
 
         if(Input.GetKeyDown(KeyCode.Q))
@@ -95,5 +90,16 @@ public class player_stats : MonoBehaviour
 
         transform.position = actual_spawnpoint_position;
         rb.velocity = Vector2.zero;
+    }
+
+    public void delete_data()
+    {
+
+        PlayerPrefs.DeleteKey("aspp_x");
+        PlayerPrefs.DeleteKey("aspp_y");
+        PlayerPrefs.DeleteKey("aspp_z");
+        PlayerPrefs.DeleteKey("timer");
+
+        SceneManager.LoadScene(0);
     }
 }

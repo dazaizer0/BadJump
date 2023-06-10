@@ -8,6 +8,7 @@ TagManager:
   - damage
   - point
   - player
+  - donotclick
   layers:
   - Default
   - TransparentFX

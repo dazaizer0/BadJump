@@ -20,7 +20,7 @@ PlayerSettings:
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
-  m_SplashScreenAnimation: 1
+  m_SplashScreenAnimation: 0
   m_SplashScreenLogoStyle: 1
   m_SplashScreenDrawMode: 0
   m_SplashScreenBackgroundAnimationZoom: 1
@@ -40,9 +40,9 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: aad83f4b2bf4dc242a1b37869a76dd0a, type: 3}
+  - logo: {fileID: 21300000, guid: 53d90d1fbf6571a47ba858274b2b6850, type: 3}
     duration: 2
-  - logo: {fileID: 21300000, guid: d265e04a954afc24a9c86823230ec631, type: 3}
+  - logo: {fileID: 21300000, guid: 316630ebd9a5fd545a4db0a3338c0856, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 2800000, guid: aad83f4b2bf4dc242a1b37869a76dd0a, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -60,8 +60,8 @@ PlayerSettings:
   androidShowActivityIndicatorOnLoading: -1
   iosUseCustomAppBackgroundBehavior: 0
   iosAllowHTTPDownload: 1
-  allowedAutorotateToPortrait: 1
-  allowedAutorotateToPortraitUpsideDown: 1
+  allowedAutorotateToPortrait: 0
+  allowedAutorotateToPortraitUpsideDown: 0
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
@@ -277,7 +277,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: aad83f4b2bf4dc242a1b37869a76dd0a, type: 3}
+      m_Icon: {fileID: 2800000, guid: 316630ebd9a5fd545a4db0a3338c0856, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

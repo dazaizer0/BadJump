@@ -26,7 +26,7 @@ public class player_direction : MonoBehaviour
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, player.position);
 
-        if((Vector2.Distance(transform.position, player.position) < 1f) || Vector2.Distance(transform.position, player.position) > 11.1f)
+        if((Vector2.Distance(transform.position, player.position) < 0.9f) || Vector2.Distance(transform.position, player.position) > 12.6f)
         {
 
             sp.color = Color.red;
