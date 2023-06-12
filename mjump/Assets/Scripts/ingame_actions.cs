@@ -15,4 +15,20 @@ public class ingame_actions : MonoBehaviour
 
         PlayerPrefs.SetFloat("timer", player_stats.timer);
     }
+
+    public static void play_game()
+    {
+
+        SceneManager.LoadScene("Game");
+        Debug.Log("Play");
+    }
+
+    public static void menu_game()
+    {
+
+        SceneManager.LoadScene("Menu");
+        Debug.Log("mMenu");
+
+        PlayerPrefs.SetFloat("timer", player_stats.timer);
+    }
 }

@@ -12,6 +12,7 @@ public class pause_menu : MonoBehaviour
     void Start()
     {
 
+        p_menu_active = false;
     }
 
     void Update()

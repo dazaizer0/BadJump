@@ -105,6 +105,6 @@ public class player_stats : MonoBehaviour
         PlayerPrefs.DeleteKey("aspp_z");
         PlayerPrefs.DeleteKey("timer");
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Game");
     }
 }
