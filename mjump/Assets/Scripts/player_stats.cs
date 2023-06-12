@@ -15,6 +15,8 @@ public class player_stats : MonoBehaviour
     public static float timer;
     public static Rigidbody2D rb;
 
+    public end_point ep;
+
     void Start()
     {
         
@@ -90,6 +92,9 @@ public class player_stats : MonoBehaviour
 
         transform.position = actual_spawnpoint_position;
         rb.velocity = Vector2.zero;
+        pause_menu.p_menu_active = false;
+        ep.end_canva.enabled = false;
+        Time.timeScale = 1f;
     }
 
     public void delete_data()

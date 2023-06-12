@@ -29,7 +29,7 @@ public class player_movement : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && canJump == true && !pause_menu.p_menu_active)
         {
             
-            if(Vector2.Distance(transform.position, Direction.transform.position) < 0.9f || Vector2.Distance(transform.position, Direction.transform.position) > 12.6f /*|| Direction.transform.position == donotclick.transform.position*/)
+            if(Vector2.Distance(transform.position, Direction.transform.position) < 0.9f || Vector2.Distance(transform.position, Direction.transform.position) > 14f /*|| Direction.transform.position == donotclick.transform.position*/)
             {
 
                 Debug.Log("no direction");

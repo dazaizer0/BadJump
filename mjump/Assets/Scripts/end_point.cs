@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
 public class end_point : MonoBehaviour
 {
 
-    public TextMeshProUGUI end_text;
-    public TextMeshProUGUI end_text_2;
+    public Canvas end_canva;
+    public TextMeshProUGUI EText;
+    public string etext;
+
 
     void Start()
     {
         
-        end_text.enabled = false;
-        end_text_2.enabled = false;
+        end_canva.enabled = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -22,8 +24,9 @@ public class end_point : MonoBehaviour
         if(other.tag == "player")
         {
 
-            end_text.enabled = true;
-            end_text_2.enabled = true;
+            end_canva.enabled = true;
+            EText.text = etext.ToString();
+            Time.timeScale = 0f;
         }
     }
 }
