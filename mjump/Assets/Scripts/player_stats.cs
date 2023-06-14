@@ -11,6 +11,9 @@ public class player_stats : MonoBehaviour
     public Vector3 actual_spawnpoint_position;
     public bool check_pointed = false;
 
+    public static float score;
+    public TextMeshProUGUI Score;
+
     public TextMeshProUGUI Timer;
     public static float timer;
     public static Rigidbody2D rb;
@@ -21,6 +24,8 @@ public class player_stats : MonoBehaviour
     {
         
         timer = PlayerPrefs.GetFloat("timer");
+        score = PlayerPrefs.GetFloat("score");
+
         actual_spawnpoint_position.x = PlayerPrefs.GetFloat("aspp_x");
         actual_spawnpoint_position.y = PlayerPrefs.GetFloat("aspp_y");
         actual_spawnpoint_position.z = PlayerPrefs.GetFloat("aspp_z");
@@ -53,7 +58,8 @@ public class player_stats : MonoBehaviour
         }
 
         timer += 1 * Time.deltaTime;
-        Timer.text =timer.ToString("F1");
+        Timer.text = timer.ToString("F1");
+        Score.text = "score: " + score.ToString("F2");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -84,6 +90,16 @@ public class player_stats : MonoBehaviour
             PlayerPrefs.SetFloat("aspp_x", actual_spawnpoint_position.x);
             PlayerPrefs.SetFloat("aspp_y", actual_spawnpoint_position.y);
             PlayerPrefs.SetFloat("aspp_z", actual_spawnpoint_position.z);
+
+            if (other.gameObject.TryGetComponent(out check_point chp))
+            {
+
+                if(chp.activated == false)
+                {
+
+                    score += 60 / timer;
+                }
+            }
         }
     }
 
@@ -91,20 +107,18 @@ public class player_stats : MonoBehaviour
     {
 
         transform.position = actual_spawnpoint_position;
+
         rb.velocity = Vector2.zero;
+
         pause_menu.p_menu_active = false;
         ep.end_canva.enabled = false;
+
         Time.timeScale = 1f;
     }
 
     public void delete_data()
     {
 
-        PlayerPrefs.DeleteKey("aspp_x");
-        PlayerPrefs.DeleteKey("aspp_y");
-        PlayerPrefs.DeleteKey("aspp_z");
-        PlayerPrefs.DeleteKey("timer");
-
-        SceneManager.LoadScene("Game");
+        PlayerPrefs.DeleteAll();
     }
 }

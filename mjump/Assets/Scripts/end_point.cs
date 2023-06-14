@@ -19,6 +19,12 @@ public class end_point : MonoBehaviour
         end_canva.enabled = false;
     }
 
+    public void close_end_canva()
+    {
+
+        end_canva.enabled = false;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -31,6 +37,8 @@ public class end_point : MonoBehaviour
             EText.text = etext.ToString();
             Time.timeScale = 0f;
             Debug.Log(Time.timeScale);
+
+            player_stats.score += 6000 / player_stats.timer;
         }
     }
 

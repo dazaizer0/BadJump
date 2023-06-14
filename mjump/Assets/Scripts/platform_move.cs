@@ -7,6 +7,7 @@ public class platform_move : MonoBehaviour
     
     public bool active = false;
     public Vector2 target_position;
+    public Vector2 start_pos;
     Rigidbody2D rb;
 
     void Start()
@@ -33,5 +34,17 @@ public class platform_move : MonoBehaviour
 
             active = true;
         }
+
+        if(other.tag == "return_p")
+        {
+
+            return_platform();
+        }
+    }
+
+    public void return_platform()
+    {
+
+        transform.position = start_pos;
     }
 }

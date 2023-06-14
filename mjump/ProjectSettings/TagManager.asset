@@ -9,6 +9,7 @@ TagManager:
   - point
   - player
   - donotclick
+  - return_p
   layers:
   - Default
   - TransparentFX

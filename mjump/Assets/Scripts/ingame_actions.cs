@@ -14,6 +14,7 @@ public class ingame_actions : MonoBehaviour
         Debug.Log("Quit");
 
         PlayerPrefs.SetFloat("timer", player_stats.timer);
+        PlayerPrefs.SetFloat("score", player_stats.score);
     }
 
     public static void play_game()
@@ -30,5 +31,6 @@ public class ingame_actions : MonoBehaviour
         Debug.Log("mMenu");
 
         PlayerPrefs.SetFloat("timer", player_stats.timer);
+        PlayerPrefs.SetFloat("score", player_stats.score);
     }
 }
