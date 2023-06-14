@@ -34,6 +34,12 @@ public class menu_main : MonoBehaviour
         }
     }
 
+    public void screen()
+    {
+
+        Screen.fullScreen = !Screen.fullScreen;
+    }
+
     public void delete_data()
     {
 
