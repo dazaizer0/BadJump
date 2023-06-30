@@ -7,7 +7,7 @@ public class pause_menu : MonoBehaviour
 {
     
     public Canvas p_menu;
-    public static bool p_menu_active = false;
+    [SerializeField] public static bool p_menu_active = false;
 
     void Start()
     {

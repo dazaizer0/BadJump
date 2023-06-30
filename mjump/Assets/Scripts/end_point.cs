@@ -22,7 +22,9 @@ public class end_point : MonoBehaviour
     public void close_end_canva()
     {
 
+        player_stats.rb.position = player_stats.rb.position;
         end_canva.enabled = false;
+        player_stats.rb.velocity = Vector2.zero;
     }
 
     void OnTriggerEnter2D(Collider2D other)

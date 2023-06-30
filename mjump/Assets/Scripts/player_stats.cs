@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
@@ -18,7 +19,7 @@ public class player_stats : MonoBehaviour
     public static float timer;
     public static Rigidbody2D rb;
 
-    public end_point ep;
+    public Canvas end_canva;
 
     void Start()
     {
@@ -111,7 +112,7 @@ public class player_stats : MonoBehaviour
         rb.velocity = Vector2.zero;
 
         pause_menu.p_menu_active = false;
-        ep.end_canva.enabled = false;
+        end_canva.enabled = false;
 
         Time.timeScale = 1f;
     }
