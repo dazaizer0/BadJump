@@ -13,6 +13,9 @@ public class check_point : MonoBehaviour
 
     private float currentTime = 0f;
 
+    public ParticleSystem check_effect;
+    public bool effect_played = false;
+
     void Update ()
     {
 
@@ -34,6 +37,9 @@ public class check_point : MonoBehaviour
         {
 
             activated = true;
+            if(effect_played != true)
+                check_effect.Play();
+                effect_played = true;
         }
     }
 }
