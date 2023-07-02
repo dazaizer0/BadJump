@@ -11,6 +11,7 @@ public class end_point : MonoBehaviour
     public TextMeshProUGUI EText;
     public string etext;
     public bool get = false;
+    public player_movement pm;
 
 
     void Start()
@@ -24,6 +25,8 @@ public class end_point : MonoBehaviour
 
         player_stats.rb.position = player_stats.rb.position;
         end_canva.enabled = false;
+        StartCoroutine(pm.velocity_zero_for1s());
+
         player_stats.rb.velocity = Vector2.zero;
     }
 
@@ -36,6 +39,9 @@ public class end_point : MonoBehaviour
             get = true;
 
             end_canva.enabled = true;
+            player_movement.canJump = false;
+            Time.timeScale = 0f;
+
             EText.text = etext.ToString();
             Time.timeScale = 0f;
             Debug.Log(Time.timeScale);
@@ -51,6 +57,8 @@ public class end_point : MonoBehaviour
         {
 
             end_canva.enabled = false;
+            StartCoroutine(pm.velocity_zero_for1s());
+
             EText.text = etext.ToString();
             Time.timeScale = 1f;
             Debug.Log(Time.timeScale);

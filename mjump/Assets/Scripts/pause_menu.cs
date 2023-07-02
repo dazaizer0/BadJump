@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System.Threading;
 
 public class pause_menu : MonoBehaviour
 {
     
     public Canvas p_menu;
+    public player_movement pm;
     [SerializeField] public static bool p_menu_active = false;
 
     void Start()
@@ -40,7 +42,6 @@ public class pause_menu : MonoBehaviour
         {
 
             p_menu_active = false;
-            player_stats.rb.velocity =Vector2.zero;
         }
     }
 
@@ -51,12 +52,13 @@ public class pause_menu : MonoBehaviour
         {
 
             p_menu_active = true;
+            player_movement.canJump = false;
         }
         else if(p_menu_active)
         {
 
             p_menu_active = false;
-            player_stats.rb.velocity =Vector2.zero;
+            StartCoroutine(pm.velocity_zero_for1s());
         }
     }
 }

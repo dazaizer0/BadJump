@@ -79,4 +79,12 @@ public class player_movement : MonoBehaviour
             canJump = true;
         }
     }
+
+    public IEnumerator velocity_zero_for1s()
+    {
+
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 1f;
+        canJump = true;
+    }
 }
