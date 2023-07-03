@@ -10,6 +10,11 @@ public class player_movement : MonoBehaviour
     public float jump_force;
     public Transform donotclick;
 
+    [Header("Sprites")]
+    public GameObject idle_mesh;
+    public GameObject jump_mesh;
+
+
     void Start()
     {
         
@@ -48,6 +53,33 @@ public class player_movement : MonoBehaviour
                 canJump = false;
             }
         }
+
+        if (rb.velocity.x < -1f)
+        {
+
+
+            Quaternion newRotation = Quaternion.Euler(0f, 0f, 0f);
+            transform.rotation = newRotation;
+        }
+        else if (rb.velocity.x > 1f)
+        {
+
+            Quaternion newRotation = Quaternion.Euler(0f, 180f, 0f);
+            transform.rotation = newRotation;
+        }
+
+        if(canJump)
+        {
+
+            idle_mesh.SetActive(true);
+            jump_mesh.SetActive(false);
+        }
+        else if (!canJump)
+        {
+
+            idle_mesh.SetActive(false);
+            jump_mesh.SetActive(true);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -57,6 +89,12 @@ public class player_movement : MonoBehaviour
         {
 
             canJump = true;
+        }
+
+        if (other.tag == "jump_pad")
+        {
+
+            rb.AddForce(Vector2.up, ForceMode2D.Impulse);
         }
     }
 
