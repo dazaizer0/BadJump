@@ -7,11 +7,13 @@ public class menu_main : MonoBehaviour
 {
 
     public Canvas options;
+    public Canvas help;
 
     void Start()
     {
         
         options.enabled = false;
+        help.enabled = false;
     }
 
     void Update()
@@ -31,6 +33,21 @@ public class menu_main : MonoBehaviour
         {
 
             options.enabled = false;
+        }
+    }
+
+    public void help_enable()
+    {
+
+        if (help.enabled == false)
+        {
+
+            help.enabled = true;
+        }
+        else
+        {
+
+            help.enabled = false;
         }
     }
 
