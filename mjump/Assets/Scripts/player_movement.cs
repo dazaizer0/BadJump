@@ -10,6 +10,13 @@ public class player_movement : MonoBehaviour
     public float jump_force;
     public Transform donotclick;
 
+    public AudioSource audio_player;
+    public AudioClip Wyskok;
+    public AudioClip Wskok;
+    public AudioClip Smierc;
+    public AudioClip Kot;
+    public AudioClip Checkpoint;
+
     [Header("Sprites")]
     public GameObject idle_mesh;
     public GameObject jump_mesh;
@@ -45,6 +52,9 @@ public class player_movement : MonoBehaviour
 
                 Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Vector3 playerPosition = transform.position;
+
+                audio_player.clip = Wyskok;
+                audio_player.Play();
 
                 Vector2 direction = (mousePosition - playerPosition).normalized;
                 rb.AddForce(direction * jump_force, ForceMode2D.Impulse);
@@ -89,6 +99,25 @@ public class player_movement : MonoBehaviour
         {
 
             canJump = true;
+            // audio_player.clip = Wskok;
+            // audio_player.Play();
+        }
+
+        if (other.tag == "damage")
+        {
+
+            canJump = true;
+            audio_player.clip = Smierc;
+            audio_player.Play();
+        }
+
+
+        if (other.tag == "endp")
+        {
+
+            canJump = true;
+            audio_player.clip = Kot;
+            audio_player.Play();
         }
 
         if (other.tag == "jump_pad")
@@ -99,16 +128,6 @@ public class player_movement : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D other)
-    {
-        
-        if(other.tag == "ground")
-        {
-
-            canJump = true;
-        }
-    }
-
-    void OnTriggerStay(Collider other)
     {
         
         if(other.tag == "ground")

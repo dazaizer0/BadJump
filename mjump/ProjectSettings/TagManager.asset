@@ -10,6 +10,7 @@ TagManager:
   - player
   - donotclick
   - return_p
+  - endp
   layers:
   - Default
   - TransparentFX
