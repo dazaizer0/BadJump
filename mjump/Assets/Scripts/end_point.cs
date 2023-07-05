@@ -12,6 +12,9 @@ public class end_point : MonoBehaviour
     public string etext;
     public bool get = false;
     public player_movement pm;
+    public ParticleSystem check_effect;
+    public bool effect_played = false;
+
 
 
     void Start()
@@ -47,6 +50,10 @@ public class end_point : MonoBehaviour
             Debug.Log(Time.timeScale);
 
             player_stats.score += 6000 / player_stats.timer;
+
+            if (effect_played != true)
+                check_effect.Play();
+                effect_played = true;
         }
     }
 

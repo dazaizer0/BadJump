@@ -54,14 +54,14 @@ public class player_movement : MonoBehaviour
             }
         }
 
-        if (rb.velocity.x < -1f)
+        if (rb.velocity.x < -0.5f)
         {
 
 
             Quaternion newRotation = Quaternion.Euler(0f, 0f, 0f);
             transform.rotation = newRotation;
         }
-        else if (rb.velocity.x > 1f)
+        else if (rb.velocity.x > 0.5f)
         {
 
             Quaternion newRotation = Quaternion.Euler(0f, 180f, 0f);
