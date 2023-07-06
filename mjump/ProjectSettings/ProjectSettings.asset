@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: dazai
-  productName: Big Cat's Road To Heaven
+  productName: ' Cat''s Brokecast'
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -662,7 +662,7 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 2023109275, guid: 22b6d9334a79e7f4da0af6834e550ab5, type: 3}
+  splashScreenBackgroundSourceLandscape: {fileID: -499885108, guid: 23dea5e77f9f8214aab3041932a6961b, type: 3}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   blurSplashScreenBackground: 1
   spritePackerPolicy: 
