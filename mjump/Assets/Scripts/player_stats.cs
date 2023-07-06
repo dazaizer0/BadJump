@@ -21,6 +21,12 @@ public class player_stats : MonoBehaviour
 
     public Canvas end_canva;
 
+    [SerializeField] private int kicia;
+    [SerializeField] private int pysia;
+    [SerializeField] private int gacus;
+    [SerializeField] private int kini;
+    [SerializeField] private int marcin;
+
     void Start()
     {
         
@@ -81,8 +87,39 @@ public class player_stats : MonoBehaviour
             
             rb.velocity = Vector2.zero;
         }
-        
-        if(other.tag == "point")
+
+        if (other.name == "end_kicia")
+        {
+
+            kicia = 1;
+            PlayerPrefs.SetInt("kicia", kicia);
+        }
+        if (other.name == "end_pysia")
+        {
+
+            pysia = 1;
+            PlayerPrefs.SetInt("pysia", pysia);
+        }
+        if (other.name == "end_gacus")
+        {
+
+            gacus = 1;
+            PlayerPrefs.SetInt("gacus", gacus);
+        }
+        if (other.name == "end_kini")
+        {
+
+            kini = 1;
+            PlayerPrefs.SetInt("kini", kini);
+        }
+        if (other.name == "end_marcin")
+        {
+
+            marcin = 1;
+            PlayerPrefs.SetInt("marcin", marcin);
+        }
+
+        if (other.tag == "point")
         {
 
             check_pointed = true;

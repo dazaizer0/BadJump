@@ -16,6 +16,9 @@ public class check_point : MonoBehaviour
     public ParticleSystem check_effect;
     public bool effect_played = false;
 
+    public AudioSource audio_player;
+    public AudioClip audio;
+
     void Update ()
     {
 
@@ -38,8 +41,12 @@ public class check_point : MonoBehaviour
 
             activated = true;
             if(effect_played != true)
+            {
                 check_effect.Play();
                 effect_played = true;
+                audio_player.clip = audio;
+                audio_player.Play();
+            }
         }
     }
 }
