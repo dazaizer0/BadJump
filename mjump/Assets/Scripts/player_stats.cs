@@ -21,11 +21,11 @@ public class player_stats : MonoBehaviour
 
     public Canvas end_canva;
 
-    [SerializeField] private int kicia;
-    [SerializeField] private int pysia;
-    [SerializeField] private int gacus;
-    [SerializeField] private int kini;
-    [SerializeField] private int marcin;
+    public int kicia;
+    public int pysia;
+    public int gacus;
+    public int kini;
+    public int marcin;
 
     void Start()
     {

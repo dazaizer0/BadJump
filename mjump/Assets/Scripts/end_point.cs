@@ -14,13 +14,79 @@ public class end_point : MonoBehaviour
     public player_movement pm;
     public ParticleSystem check_effect;
     public bool effect_played = false;
-
-
+    public player_stats player_stats;
+    public string cat_name;
 
     void Start()
     {
         
         end_canva.enabled = false;
+    }
+
+    private void Update()
+    {
+        
+        /*
+        // kicia
+        if(player_stats.kicia == 1 && cat_name == "kicia")
+        {
+
+            gameObject.SetActive(false);
+        }
+        else
+        {
+
+            gameObject.SetActive(true);
+        }
+
+        // pysia
+        if (player_stats.pysia == 1 && cat_name == "pysia")
+        {
+
+            gameObject.SetActive(false);
+        }
+        else
+        {
+
+            gameObject.SetActive(true);
+        }
+
+        // gacus
+        if (player_stats.gacus == 1 && cat_name == "gacus")
+        {
+
+            gameObject.SetActive(false);
+        }
+        else
+        {
+
+            gameObject.SetActive(true);
+        }
+
+        // marcin
+        if (player_stats.marcin == 1 && cat_name == "marcin")
+        {
+
+            gameObject.SetActive(false);
+        }
+        else
+        {
+
+            gameObject.SetActive(true);
+        }
+
+        // kini
+        if (player_stats.kini == 1 && cat_name == "kini")
+        {
+
+            gameObject.SetActive(false);
+        }
+        else
+        {
+
+            gameObject.SetActive(true);
+        }
+        */
     }
 
     public void close_end_canva()

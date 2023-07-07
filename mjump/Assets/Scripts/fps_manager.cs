@@ -25,7 +25,7 @@ public class fps_manager : MonoBehaviour
         deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
         fps = Mathf.RoundToInt(1.0f / deltaTime);
 
-        if(fps < 15f && priv_ses_timer > 6f)
+        if(fps < 5f && priv_ses_timer > 5f)
         {
             Time.timeScale = 0f;
             FPS_error_canvas.enabled = true;
